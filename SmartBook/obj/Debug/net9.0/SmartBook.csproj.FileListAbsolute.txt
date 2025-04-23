@@ -1,0 +1,15 @@
+/Users/eliserochaix/Lexicon VT2025 C#/SmartBook/SmartBook/bin/Debug/net9.0/SmartBook
+/Users/eliserochaix/Lexicon VT2025 C#/SmartBook/SmartBook/bin/Debug/net9.0/SmartBook.deps.json
+/Users/eliserochaix/Lexicon VT2025 C#/SmartBook/SmartBook/bin/Debug/net9.0/SmartBook.runtimeconfig.json
+/Users/eliserochaix/Lexicon VT2025 C#/SmartBook/SmartBook/bin/Debug/net9.0/SmartBook.dll
+/Users/eliserochaix/Lexicon VT2025 C#/SmartBook/SmartBook/bin/Debug/net9.0/SmartBook.pdb
+/Users/eliserochaix/Lexicon VT2025 C#/SmartBook/SmartBook/obj/Debug/net9.0/SmartBook.GeneratedMSBuildEditorConfig.editorconfig
+/Users/eliserochaix/Lexicon VT2025 C#/SmartBook/SmartBook/obj/Debug/net9.0/SmartBook.AssemblyInfoInputs.cache
+/Users/eliserochaix/Lexicon VT2025 C#/SmartBook/SmartBook/obj/Debug/net9.0/SmartBook.AssemblyInfo.cs
+/Users/eliserochaix/Lexicon VT2025 C#/SmartBook/SmartBook/obj/Debug/net9.0/SmartBook.csproj.CoreCompileInputs.cache
+/Users/eliserochaix/Lexicon VT2025 C#/SmartBook/SmartBook/obj/Debug/net9.0/SmartBook.sourcelink.json
+/Users/eliserochaix/Lexicon VT2025 C#/SmartBook/SmartBook/obj/Debug/net9.0/SmartBook.dll
+/Users/eliserochaix/Lexicon VT2025 C#/SmartBook/SmartBook/obj/Debug/net9.0/refint/SmartBook.dll
+/Users/eliserochaix/Lexicon VT2025 C#/SmartBook/SmartBook/obj/Debug/net9.0/SmartBook.pdb
+/Users/eliserochaix/Lexicon VT2025 C#/SmartBook/SmartBook/obj/Debug/net9.0/SmartBook.genruntimeconfig.cache
+/Users/eliserochaix/Lexicon VT2025 C#/SmartBook/SmartBook/obj/Debug/net9.0/ref/SmartBook.dll
