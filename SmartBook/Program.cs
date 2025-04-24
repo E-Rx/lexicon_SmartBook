@@ -37,24 +37,21 @@ namespace SmartBook;
         switch (choice)
         {
           case "1":
-            AddBook();
-            break;
-          case "2":
-            RemoveBook();
-            break;
-          case "3":
             ListAllBooks();
             break;
-          case "4":
+          case "2":
             SearchBooks();
             break;
-          case "5":
-            ToogleBookAvailability();
+          case "3":
+            AddBook();
             break;
-          case "6":
+          case "4":
+            RemoveBook();
+            break;
+          case "5":
             SaveLibrary();
             break;
-          case "7":
+          case "0":
             running = false;
 
             // Save before exiting
@@ -87,17 +84,68 @@ namespace SmartBook;
   private static void DisplayMainMenu()
     {
       Console.WriteLine("\n===== LIBRARY MANAGEMENT SYSTEM =====");
-      Console.WriteLine("\n1. Add a book");
-      Console.WriteLine("2. Remove a book");
-      Console.WriteLine("3. List all books");
-      Console.WriteLine("4. Search for books");
-      Console.WriteLine("5. Book availability status");
-      Console.WriteLine("6. Save library to file");
-      Console.WriteLine("7. Exit");
-      Console.Write("\nEnter your choice (1-7): ");
+      Console.WriteLine("\n1. List all books");
+      Console.WriteLine("2. Search for books (or see book availability)");
+      Console.WriteLine("3. Add a book");
+      Console.WriteLine("4. Remove a book");
+      Console.WriteLine("5. Save library to file");
+      Console.WriteLine("0. Exit");
+      Console.Write("\nEnter your choice (1-5): ");
     }
 
-    // Add a book to the library
+
+  // List all books in the library
+  private static void ListAllBooks()
+  {
+    Console.Clear();
+    Console.WriteLine("\n===== ALL BOOKS (sorted by title) =====");
+
+    var books = library.GetAllBooksSortedByTitle();
+
+    if (books.Count == 0)
+    {
+      Console.WriteLine("No books found in the library.");
+    }
+
+    foreach (var book in books)
+    {
+      Console.WriteLine(book);
+      Console.WriteLine("------------------------");
+    }
+     Console.WriteLine($"\nTotal books: {books.Count}");
+
+  }
+
+  // Search for books by title, author, ISBN, or category
+  // and display their availability status
+  private static void SearchBooks()
+    {
+      Console.Clear();
+      Console.WriteLine("\n===== SEARCH BOOKS =====");
+      Console.Write("Enter search term (title, author, ISBN, or category): ");
+      string searchTerm = Console.ReadLine() ?? string.Empty;
+
+      var results = library.SearchBooks(searchTerm);
+
+      if (results.Count == 0)
+      {
+        Console.WriteLine("No books found matching the search term.");
+      }
+      else
+      {
+        foreach (var book in results)
+        {
+            string status = book.IsAvailable ? "Available" : "Borrowed";
+            Console.WriteLine($"{book.Title} by {book.Author}");
+            Console.WriteLine($"ISBN: {book.ISBN}, Category: {book.Category}");
+            Console.WriteLine($"Status: {status}");
+            Console.WriteLine("------------------------");
+        }
+        Console.WriteLine($"\nTotal books found: {results.Count}");
+      }
+    }
+    
+    // Add a book to the librar
     private static void AddBook()
     {
       Console.WriteLine("\n===== ADD A BOOK =====");
@@ -110,7 +158,7 @@ namespace SmartBook;
       Console.Write("Enter book ISBN: ");
       string isbn = Console.ReadLine() ?? string.Empty;
 
-      Console.Write("Enter book publication category: ");
+      Console.Write("Enter book category: ");
       string category = Console.ReadLine() ?? string.Empty;
 
 
@@ -135,7 +183,7 @@ namespace SmartBook;
 
     }
 
-
+    // Remove a book from the library by title or ISBN
     private static void RemoveBook()
     {
       Console.Clear ();
@@ -159,7 +207,6 @@ namespace SmartBook;
           break;
       }
     }
-
 
     private static void RemoveBookByTitle()
     {
@@ -205,76 +252,7 @@ namespace SmartBook;
       }
     }
 
-  private static void ListAllBooks()
-  {
-    Console.Clear();
-    Console.WriteLine("\n===== ALL BOOKS (sorted by title) =====");
-
-    var books = library.GetAllBooksSortedByTitle();
-
-    if (books.Count == 0)
-    {
-      Console.WriteLine("No books found in the library.");
-    }
-
-    foreach (var book in books)
-    {
-      Console.WriteLine(book);
-      Console.WriteLine("------------------------");
-    }
-     Console.WriteLine($"\nTotal books: {books.Count}");
-
-  }
-
-  private static void SearchBooks()
-    {
-      Console.Clear();
-      Console.WriteLine("\n===== SEARCH BOOKS =====");
-      Console.Write("Enter search term (title, author, ISBN, or category): ");
-      string searchTerm = Console.ReadLine() ?? string.Empty;
-
-      var results = library.SearchBooks(searchTerm);
-
-      if (results.Count == 0)
-      {
-        Console.WriteLine("No books found matching the search term.");
-      }
-      else
-      {
-        foreach (var book in results)
-        {
-          Console.WriteLine(book);
-          Console.WriteLine("------------------------");
-        }
-        Console.WriteLine($"\nTotal books found: {results.Count}");
-      }
-    }
-
-    private static void ToogleBookAvailability()
-    {
-      Console.Clear();
-      Console.WriteLine("\n===== TOGGLE BOOK AVAILABILITY =====");
-      Console.Write("Enter the ISBN of the book to toggle availability: ");
-      string isbn = Console.ReadLine() ?? string.Empty;
-
-      try
-      {
-        if (library.ToggleBookAvailability(isbn))
-        {
-            Console.WriteLine($"Book with ISBN '{isbn}' availability toggled successfully.");
-        }
-        else
-        {
-            Console.WriteLine($"Book with ISBN '{isbn}' not found.");
-        }
-      }
-      catch (Exception ex)
-      {
-        Console.WriteLine($"Error toggling book availability: {ex.Message}");
-      }
-    }
-
-    private static void SaveLibrary()
+  private static void SaveLibrary()
     {
         if (library.SaveToJson())
         {
