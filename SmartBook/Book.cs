@@ -12,7 +12,7 @@ public class Book
     public string Author { get; set; }
     public string ISBN { get; set; }
     public string Category { get; set; }
-    public bool IsAvailable { get; set; }
+    public bool IsAvailable { get; set; } // default value is true
 
 
     // constructor for JSON serialization
@@ -41,7 +41,7 @@ public class Book
       string status = IsAvailable ? "Available" : "Borrowed";
       return $"Title: {Title}, Author: {Author}, ISBN: {ISBN}, Category: {Category}, IsAvailable: {IsAvailable}";
     }
-    
+
     // method to toggle the availability of the book
     public bool ToggleAvailability()
     {

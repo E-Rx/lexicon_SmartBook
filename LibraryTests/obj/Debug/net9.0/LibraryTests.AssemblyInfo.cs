@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("SmartBook")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("LibraryTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f19ad53ccb73976e8e4d9bb8fbf1c6be4fe0056")]
-[assembly: System.Reflection.AssemblyProductAttribute("SmartBook")]
-[assembly: System.Reflection.AssemblyTitleAttribute("SmartBook")]
+[assembly: System.Reflection.AssemblyProductAttribute("LibraryTests")]
+[assembly: System.Reflection.AssemblyTitleAttribute("LibraryTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Généré par la classe MSBuild WriteCodeFragment.
