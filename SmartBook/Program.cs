@@ -1,4 +1,4 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace SmartBook
@@ -9,6 +9,7 @@ namespace SmartBook
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.Clear();
             Console.WriteLine("Welcome to SmartBook!");
             Console.WriteLine("The best Library Management System!");
 
@@ -33,6 +34,7 @@ namespace SmartBook
             {
                 DisplayMainMenu();
                 string choice = Console.ReadLine() ?? string.Empty;
+                Console.Clear();
 
                 switch (choice)
                 {
@@ -53,6 +55,8 @@ namespace SmartBook
                         break;
                     case "0":
                         running = false;
+                        Console.Clear();
+                        Console.WriteLine("Thank you for using SmartBook!");
 
                         // Save before exiting
                         if (library.SaveToJson())
@@ -67,7 +71,7 @@ namespace SmartBook
                 }
 
                 // Return to main menu
-                if (running)
+                if (running && choice != "0")
                 {
                     Console.WriteLine("\nPress any key to return to the main menu...");
                     Console.ReadKey();
@@ -81,12 +85,12 @@ namespace SmartBook
         {
             Console.WriteLine("\n===== LIBRARY MANAGEMENT SYSTEM =====");
             Console.WriteLine("\n1. View all books");
-            Console.WriteLine("2. Search for books (or see book availability)");
+            Console.WriteLine("2. Search for books (& see book availability)");
             Console.WriteLine("3. Add a new book");
             Console.WriteLine("4. Remove a book");
             Console.WriteLine("5. Save library to file");
             Console.WriteLine("0. Exit");
-            Console.Write("\nEnter your choice (1-5): ");
+            Console.Write("\nEnter your choice (0-5): ");
         }
 
         // List all books in the library
@@ -103,17 +107,12 @@ namespace SmartBook
             }
             else
             {
-                foreach (var book in books)
-                {
-                    Console.WriteLine(book);
-                    Console.WriteLine("------------------------");
-                }
+                DisplayBookList(books);
                 Console.WriteLine($"\nTotal books: {books.Count}");
             }
         }
 
-        // Search for books by title, author, ISBN, or category
-        // and display their availability status
+        // Search for books by title, author, ISBN, or category (and display their availability status)
         private static void SearchBooks()
         {
             Console.Clear();
@@ -125,21 +124,51 @@ namespace SmartBook
 
             if (results.Count == 0)
             {
-                Console.WriteLine("No books found matching the search term.");
+              Console.WriteLine("No books found matching the search term.");
             }
             else
             {
-                foreach (var book in results)
-                {
-                    Console.WriteLine(book);
-                    Console.WriteLine("------------------------");
-                }
-                Console.WriteLine($"\nTotal books found: {results.Count}");
+              DisplayBookList(results);
+              Console.WriteLine("-----------------------");
             }
+                Console.WriteLine($"\nTotal books found: {results.Count}");
         }
 
-        // Add a book to the library
-        private static void AddBook()
+        // Display the list of books with formatting
+      private static void DisplayBookList(List<Book> books)
+      {
+        Console.WriteLine("\n");
+        int index = 1;
+
+      // Loop through each book and display its details
+        foreach (var book in books)
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($" {index}. {book.Title}");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.WriteLine($"    Author: {book.Author}");
+            Console.WriteLine($"    ISBN: {book.ISBN}");
+            Console.WriteLine($"    Category: {book.Category}");
+            Console.Write($"    Status: ");
+
+            if (book.IsAvailable)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Available");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Borrowed");
+            }
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("-----------------------");
+            index++;
+        }
+      }
+    // Add a book to the library
+      private static void AddBook()
         {
             Console.WriteLine("\n===== ADD A BOOK =====");
             Console.Write("Enter book title: ");
@@ -257,9 +286,9 @@ namespace SmartBook
         }
     }
 }
-*/
 
-using System;
+
+/*using System;
 using System.Collections.Generic;
 
 namespace SmartBook
@@ -628,3 +657,4 @@ namespace SmartBook
         }
     }
 }
+*/
