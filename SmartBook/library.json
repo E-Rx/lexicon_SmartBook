@@ -1,53 +1,51 @@
-{
-  "Books": [
-    {
-      "Title": "Nils Holgerssons underbara resa genom Sverige",
-      "Author": "Selma Lagerlöf",
-      "ISBN": "9789129723953",
-      "Category": "Adventure",
-      "IsAvailable": true
-    },
-    {
-      "Title": "Isprinsessan",
-      "Author": "Camilla Läckberg",
-      "ISBN": "9789164204219",
-      "Category": "Crime",
-      "IsAvailable": true
-    },
-    {
-      "Title": "Le Petit Prince",
-      "Author": "Antoine de Saint-Exupéry",
-      "ISBN": "9782070612758",
-      "Category": "Philosophical tale",
-      "IsAvailable": true
-    },
-    {
-      "Title": "Les Misérables",
-      "Author": "Victor Hugo",
-      "ISBN": "9782253096344",
-      "Category": "Historical novel",
-      "IsAvailable": false
-    },
-    {
-      "Title": "Jacaranda",
-      "Author": "Gaël Faye",
-      "ISBN": "9782246831458",
-      "Category": "Novel",
-      "IsAvailable": true
-    },
-    {
-      "Title": "Amulett",
-      "Author": "Kazu Kibuishi",
-      "ISBN": "9789163879517",
-      "Category": "Comic",
-      "IsAvailable": true
-    },
-    {
-      "Title": "Skurkarnas skurk",
-      "Author": "IJustWantToBeCool",
-      "ISBN": "9789129739435",
-      "Category": "Children's book",
-      "IsAvailable": false
-    }
-  ]
-}
+[
+  {
+    "Title": "Nils Holgerssons underbara resa genom Sverige",
+    "Author": "Selma Lagerl\u00F6f",
+    "ISBN": "9789129723953",
+    "Category": "Adventure",
+    "IsAvailable": true
+  },
+  {
+    "Title": "Isprinsessan",
+    "Author": "Camilla L\u00E4ckberg",
+    "ISBN": "9789164204219",
+    "Category": "Crime",
+    "IsAvailable": true
+  },
+  {
+    "Title": "Le Petit Prince",
+    "Author": "Antoine de Saint-Exup\u00E9ry",
+    "ISBN": "9782070612758",
+    "Category": "Philosophical tale",
+    "IsAvailable": true
+  },
+  {
+    "Title": "Les Mis\u00E9rables",
+    "Author": "Victor Hugo",
+    "ISBN": "9782253096344",
+    "Category": "Historical novel",
+    "IsAvailable": false
+  },
+  {
+    "Title": "Petit Pays",
+    "Author": "Ga\u00EBl Faye",
+    "ISBN": "9782246857334",
+    "Category": "Novel",
+    "IsAvailable": true
+  },
+  {
+    "Title": "Amulett",
+    "Author": "Kazu Kibuishi",
+    "ISBN": "9789163879517",
+    "Category": "Comic",
+    "IsAvailable": true
+  },
+  {
+    "Title": "Skurkarnas skurk",
+    "Author": "Bj\u00F6rn Hellberg",
+    "ISBN": "9789179751555",
+    "Category": "Children\u0027s book",
+    "IsAvailable": false
+  }
+]
