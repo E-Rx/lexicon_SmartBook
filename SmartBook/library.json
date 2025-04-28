@@ -47,5 +47,12 @@
     "ISBN": "9789179751555",
     "Category": "Children\u0027s book",
     "IsAvailable": false
+  },
+  {
+    "Title": "Le Miroir de Cassandre ",
+    "Author": "Bernard Werber",
+    "ISBN": "97882253160212",
+    "Category": "novel",
+    "IsAvailable": true
   }
 ]
