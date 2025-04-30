@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text.Json;
 
@@ -35,7 +34,7 @@ namespace SmartBook
       return true;
     }
 
-    // Method to remove a book by title
+    // Method to remove a book by title (case-insensitive) using LINQ
     public bool RemoveBookByTitle(string title)
     {
       var bookToRemove = books.FirstOrDefault(b =>
@@ -64,7 +63,7 @@ namespace SmartBook
       return false;
     }
 
-    // Method to search books by combined criteria
+    // Method to search books by combined criteria using LINQ
     public List<Book> SearchBooks(string searchTerm)
     {
       if (string.IsNullOrWhiteSpace(searchTerm))
@@ -102,6 +101,13 @@ namespace SmartBook
           .ToList();
     }
 
+    // Method to find a book by ISBN
+    public Book? GetBookByISBN(string isbn)
+    {
+      return books.FirstOrDefault(b =>
+             b.ISBN.Equals(isbn, StringComparison.OrdinalIgnoreCase));
+    }
+
     // Method to save the library to a JSON file
     public bool SaveToJson()
     {
@@ -109,7 +115,9 @@ namespace SmartBook
       {
         var options = new JsonSerializerOptions
         {
-          WriteIndented = true
+          WriteIndented = true,
+          //special characters
+          Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
         };
 
         string jsonString = JsonSerializer.Serialize(books, options);
@@ -146,11 +154,5 @@ namespace SmartBook
       }
     }
 
-    // Method to find a book by ISBN
-    public Book? GetBookByISBN(string isbn)
-    {
-      return books.FirstOrDefault(b =>
-             b.ISBN.Equals(isbn, StringComparison.OrdinalIgnoreCase));
-    }
   }
 }

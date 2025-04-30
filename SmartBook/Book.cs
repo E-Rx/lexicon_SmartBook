@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace SmartBook
 {
@@ -35,7 +36,20 @@ namespace SmartBook
       {
         throw new ArgumentException("All fields must be filled.");
       }
+      /* if (!IsValid() || !IsValidISBN(isbn))
+      {
+        throw new ArgumentException("All fields must be filled and ISBN must valid.");
+      } */
     }
+
+/*     private bool IsValidISBN(string isbn)
+    {
+      if (isbn.Length == 10 || isbn.Length == 13)
+      {
+        return isbn.All(char.IsDigit);
+      }
+      return false;
+    } */
 
     public override string ToString()
     {

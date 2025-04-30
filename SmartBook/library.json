@@ -1,27 +1,27 @@
 [
   {
     "Title": "Nils Holgerssons underbara resa genom Sverige",
-    "Author": "Selma Lagerl\u00F6f",
+    "Author": "Selma Lagerlöf",
     "ISBN": "9789129723953",
     "Category": "Adventure",
     "IsAvailable": true
   },
   {
     "Title": "Isprinsessan",
-    "Author": "Camilla L\u00E4ckberg",
+    "Author": "Camilla Läckberg",
     "ISBN": "9789164204219",
     "Category": "Crime",
     "IsAvailable": true
   },
   {
     "Title": "Le Petit Prince",
-    "Author": "Antoine de Saint-Exup\u00E9ry",
+    "Author": "Antoine de Saint-Exupéry",
     "ISBN": "9782070612758",
     "Category": "Philosophical tale",
     "IsAvailable": true
   },
   {
-    "Title": "Les Mis\u00E9rables",
+    "Title": "Les Misérables",
     "Author": "Victor Hugo",
     "ISBN": "9782253096344",
     "Category": "Historical novel",
@@ -29,7 +29,7 @@
   },
   {
     "Title": "Petit Pays",
-    "Author": "Ga\u00EBl Faye",
+    "Author": "Gaël Faye",
     "ISBN": "9782246857334",
     "Category": "Novel",
     "IsAvailable": true
@@ -43,9 +43,9 @@
   },
   {
     "Title": "Skurkarnas skurk",
-    "Author": "Bj\u00F6rn Hellberg",
+    "Author": "Björn Hellberg",
     "ISBN": "9789179751555",
-    "Category": "Children\u0027s book",
+    "Category": "Children's book",
     "IsAvailable": false
   },
   {
