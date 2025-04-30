@@ -67,14 +67,25 @@ public class UnitTest1
     Assert.True(File.Exists("test_library.json"));
   }
 
-
-
   [Fact]
-  public void AddBook_ShouldAddBookToList()
+  public void LoadFromJson_ShouldLoadBooksFromJsonFile()
   {
-    var lib = new Library();
-    var book = new Book("Test", "Test Författare", "123", "Roman");
-    lib.AddBook(book);
-    Assert.Contains(book, lib.Books);
+    var library = new Library("test_library.json");
+    var book = new Book("Test LoadFromJson", "Test Json", "1111111111", "Test category");
+    library.AddBook(book);
+    library.SaveToJson();
+
+    var newLibrary = new Library("test_library.json");
+    newLibrary.LoadFromJson();
+
+    Assert.Single(newLibrary.Books);
+    Assert.Contains(newLibrary.Books, b =>
+      b.Title == "Test LoadFromJson" &&
+      b.Author == "Test Json" &&
+      b.ISBN == "1111111111" &&
+      b.Category == "Test category" &&
+      b.IsAvailable == true);
   }
+
+
 }

@@ -1,9 +1,9 @@
 [
   {
-    "Title": "Test SaveToJson",
+    "Title": "Test LoadFromJson",
     "Author": "Test Json",
-    "ISBN": "1234567890",
-    "Category": "Fiction",
+    "ISBN": "1111111111",
+    "Category": "Test category",
     "IsAvailable": true
   }
 ]
