@@ -62,7 +62,7 @@ Enhetstester har skrivits med **xUnit** för att säkerställa att bibliotekssys
 
 1. Klona projektet:
    ```bash
-   git clone https://github.com/E-Rx/lexicon_smartbook.git
+   git clone git@github.com:E-Rx/lexicon_SmartBook.git
    ```
 2. Öppna i Visual Studio eller VS Code
 3. Kör programmet med:
@@ -82,7 +82,7 @@ dotnet test
 
 ---
 
-## 🎯 Bonus / Fördjupning (valfritt)
+## 🎯 Att göra / implementera  -> Fördjupning 
 
 - 👤 Lägg till enklare logik för **användare/lånekort**
 - 📝 Exportera en **rapport (.txt)** med alla böcker som är **utlånade**
