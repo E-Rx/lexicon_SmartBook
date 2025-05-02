@@ -29,6 +29,24 @@ I den här applikationen kan du:
 
 ---
 
+### ✅ Enhetstester
+
+Enhetstester har skrivits med **xUnit** för att säkerställa att bibliotekssystemets funktioner fungerar som förväntat.
+
+#### Testfil: `LibraryTests/UnitTest1.cs`
+
+| Testnamn                                     
+|--------------------------------------------     
+| `AddBook_ShouldAddBook_WhenBookIsValid`          
+| `AddBook_ShouldNotAddBook_WhenDuplicateISBN`       
+| `RemoveBookByTitle_ShouldRemoveBook_WhenBookExists` 
+| `SearchBooks_ShouldReturnMatchingBooks_WhenSearchTermMatches` 
+| `SaveToJson_ShoudlSaveBookToJsonFile`                    
+| `LoadFromJson_ShouldLoadBooksFromJsonFile`   
+
+---
+
+
 ## 🔧 Tekniker som används
 
 - **C# / .NET**
@@ -44,7 +62,7 @@ I den här applikationen kan du:
 
 1. Klona projektet:
    ```bash
-   git clone https://github.com/ditt-namn/smartbook.git
+   git clone git@github.com:E-Rx/lexicon_SmartBook.git
    ```
 2. Öppna i Visual Studio eller VS Code
 3. Kör programmet med:
@@ -64,7 +82,7 @@ dotnet test
 
 ---
 
-## 🎯 Bonus / Fördjupning (valfritt)
+## 🎯 Att göra / implementera  -> Fördjupning 
 
 - 👤 Lägg till enklare logik för **användare/lånekort**
 - 📝 Exportera en **rapport (.txt)** med alla böcker som är **utlånade**
